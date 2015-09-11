@@ -1,6 +1,7 @@
 ##ImageToPdf
 #概要
 フォルダ分けされた画像をフォルダごとにPDF出力するソフトウェア。  
+フォルダ内の画像はファイル名が昇順ソートされてPDFのページに変換される。
 #使い方
 1.imgfile以下にフォルダを配置、さらにこのフォルダの中に画像を配置する  
 例：imgfile/Sample/320x240.png,imgfile/Sample/640x480.png,imgfile/Sample/800x600.png  
