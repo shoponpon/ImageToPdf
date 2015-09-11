@@ -5,7 +5,11 @@
 1.imgfile以下にフォルダを配置、さらにこのフォルダの中に画像を配置する  
 例：imgfile/Sample/320x240.png,imgfile/Sample/640x480.png,imgfile/Sample/800x600.png  
 2.ImageToPdf.jarをダブルクリック、あるいはコマンドライン、ターミナルから下記のコマンドを実行  
+<<<<<<< HEAD
 java -jar ImageToPdf.jar  
+=======
+  java -jar ImageToPdf.jar  
+>>>>>>> 612f52ae3ffedd4759b070f0a127ac158e9e75b8
 3.「読込中…」→「変換中…」→「完了！」の順でタスクトレイからメッセージを表示、「完了！」の５秒後にソフトが終了する  
 4.pdffile内に「フォルダ名.pdf」として出力  
 例：pdffile/Sample.pdf
