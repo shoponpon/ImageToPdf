@@ -36,14 +36,14 @@ public class ImageToPdf{
 	void initTray(){
 		Image image = null;
 		try{
-			File file = new File("trayicon.png");
+			File file = new File("trayicon.jpg");
 			image = ImageIO.read(file);
 		}catch(IOException e){
 			System.err.println(e);
 			System.exit(1);
 		}
 		if(image==null){
-			System.err.println("trayicon.png is not found!");
+			System.err.println("trayicon.jpg is not found!");
 			System.exit(1);
 		}
 		icon = new TrayIcon(image);
