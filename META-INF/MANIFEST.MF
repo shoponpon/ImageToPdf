@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Class-Path: ./class ./lib/pdfbox-app-1.8.10.jar
+Class-Path: ./ ./class ./lib/pdfbox-app-1.8.10.jar
 Created-By: 1.8.0_60 (Oracle Corporation)
 Main-Class: ImageToPdf
 

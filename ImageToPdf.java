@@ -9,6 +9,10 @@ import java.awt.Image;
 import java.awt.SystemTray;
 import java.awt.AWTException;
 import java.util.Arrays;
+import java.awt.PopupMenu;
+import java.awt.MenuItem;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -40,13 +44,18 @@ public class ImageToPdf{
 			image = ImageIO.read(file);
 		}catch(IOException e){
 			System.err.println(e);
-			System.exit(1);
-		}
-		if(image==null){
 			System.err.println("trayicon.jpg is not found!");
 			System.exit(1);
 		}
 		icon = new TrayIcon(image);
+		PopupMenu menu = new PopupMenu();
+		MenuItem item = new MenuItem("終了");
+		item.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				System.exit(0);
+			}
+		});
 		try{
 			SystemTray.getSystemTray().add(icon);
 		}catch(AWTException e){
