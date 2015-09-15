@@ -25,7 +25,7 @@ import org.apache.pdfbox.exceptions.COSVisitorException;
 public class ImageToPdf{
 	public static final String inpath = "./imgfile"; 
 	public static final String outpath = "./pdffile";
-	public static final String DS_STORE = ".DS_Store";
+	public static final String[] FILETYPE = {"jpg","png","jpeg"};
 	private TrayIcon icon;
 	
 	public static void main(String[] argv){
@@ -130,7 +130,7 @@ public class ImageToPdf{
 		String[] files = imgf.getFileList();
 		System.err.println("---"+imgf.getName()+".pdf---");
 		for(int  i = 0;i<files.length;i++){
-			if(DS_STORE.equals(files[i]))continue;
+			if(!checkFileType(files[i]))continue;
 			try{
 			System.err.println("["+inpath+"/"+imgf.getName()+"/"+files[i]+"] add...");
 			BufferedImage awtImage = ImageIO.read(new File(inpath+"/"+imgf.getName()+"/"+files[i]));
@@ -152,6 +152,18 @@ public class ImageToPdf{
 			}
 		}
 		return doc;
+	}
+	
+	boolean checkFileType(String filename){
+		boolean ret = false;
+		int p = -1;
+		p = filename.lastIndexOf(".");
+		if(p==-1)return ret;
+		String str = filename.substring(p + 1);
+		for(int i = 0;i < FILETYPE.length;i++){
+			if(FILETYPE[i].equals(str))ret = true;
+		}
+		return ret;
 	}
 }
 
